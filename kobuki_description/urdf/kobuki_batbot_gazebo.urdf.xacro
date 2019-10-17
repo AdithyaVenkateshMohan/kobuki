@@ -51,7 +51,8 @@
 	    </sensor>
 	  </gazebo>
 	
-	  <gazebo reference="cliff_sensor_left_link">
+
+	 <gazebo reference="cliff_sensor_left_link">
 	    <sensor type="ray" name="cliff_sensor_left">
 	      <always_on>true</always_on>
 	      <update_rate>50</update_rate>
@@ -143,33 +144,9 @@
 	      </ray>
 	    </sensor>
 	  </gazebo>
-	
-	  <gazebo reference="gyro_link">
-	   <sensor type="imu" name="imu">
-        <always_on>true</always_on>
-        <update_rate>50</update_rate>
-        <visualize>false</visualize>
-        <imu>
-          <noise>
-            <type>gaussian</type>
-	          <rate>
-	            <mean>0.0</mean>
-	            <stddev>${0.0014*0.0014}</stddev> <!-- 0.25 x 0.25 (deg/s) -->
-	            <bias_mean>0.0</bias_mean>
-	            <bias_stddev>0.0</bias_stddev>
-	          </rate>
-		        <accel> <!-- not used in the plugin and real robot, hence using tutorial values -->
-			        <mean>0.0</mean>
-			        <stddev>1.7e-2</stddev>
-			        <bias_mean>0.1</bias_mean>
-			        <bias_stddev>0.001</bias_stddev>
-		        </accel>
-          </noise>
-	      </imu>
-      </sensor>
-	  </gazebo>
-	
-	  <!-- <gazebo>
+	  
+<!-- 	
+	  <gazebo>
 	    <plugin name="kobuki_controller" filename="libgazebo_ros_kobuki.so">
 	      <publish_tf>1</publish_tf>
 	      <left_wheel_joint_name>wheel_left_joint</left_wheel_joint_name>
@@ -187,7 +164,7 @@
 	    </plugin>
 	  </gazebo> -->
 
-	   <gazebo>
+    <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <legacyMode>false</legacyMode>
       <publish_tf>1</publish_tf>
